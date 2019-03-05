@@ -4,11 +4,13 @@ from xpath_string.xpath import Xpath
 
 
 class TestXpath(unittest.TestCase):
+    def setUp(self):
+        self.object_1 = Xpath('//div')
 
     def test_object_creation(self):
-        object_1 = Xpath('//div')
-        assert type(object_1) is Xpath, 'object is not a Xpath class object. Is {} instead'.format(type(object_1))
+        assert type(self.object_1) is Xpath, \
+            'object is not a Xpath class object. Is {} instead'.format(type(self.object_1))
 
     def test_object_arg_check(self):
-        object_2 = Xpath('//lin')
-        assert object_2.xpath == '//lin', 'object xpath arg has value {} instead of {}'.format(object_2.xpath, '//lin')
+        assert self.object_1.xpath == '//div', \
+            'object xpath arg has value {} instead of {}'.format(self.object_1.xpath, '//div')
