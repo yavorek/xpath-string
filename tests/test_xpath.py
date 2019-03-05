@@ -16,6 +16,13 @@ class TestXpath(unittest.TestCase):
         assert self.object_1.xpath == '//div', \
             'object xpath arg has value {} instead of {}'.format(self.object_1.xpath, '//div')
 
+    def test_not_supported_type_add(self):
+        try:
+            self.object_1 + 123
+            assert False, 'Not supported type was added to Xpath object'
+        except TypeError:
+            assert True
+
     def test_string_add(self):
         assert self.object_1 + 'Test', 'Addition of: "{}" and "Test" gives {} instead of {}'.format(
             self.object_1, self.object_1 + 'Test', '//divTest')
