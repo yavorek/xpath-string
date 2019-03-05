@@ -14,3 +14,12 @@ class TwoXpathAddition(_OperationKey):
             raise Exception('TO IMPLEMENT')
         else:
             raise Exception('TO IMPLEMENT')
+
+    def add_to_xpath_with_or_operator(self, xpath_with_or_operator: str, regular_xpath: str):
+        split_xpath = self.__split_xpath(xpath_with_or_operator)
+        return '|'.join([part_of_xpath + regular_xpath for part_of_xpath in split_xpath])
+
+    def __split_xpath(self, xpath_with_or_operator: str):
+        # add checking if contains with or operator is present; if it is then save it content to some list
+        # self._or_operator_in_contains_part_regex
+        return
