@@ -5,7 +5,8 @@ from xpath_string.two_xpath_addition import TwoXpathAddition
 param_list_add_two_xpath_without_contains = [
     ('//span', '//div', '//span//div'),
     ('//div|//svg', '//span', '//div//span|//svg//span'),
-    ('//div', '//span|//svg', '//div//span|//div//svg')
+    ('//div', '//span|//svg', '//div//span|//div//svg'),
+    ('//div|//span', '//avg|//span', '//div//avg|//span//avg|//div//span|//span//span')
 ]
 
 
