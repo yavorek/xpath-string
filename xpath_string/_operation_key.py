@@ -2,7 +2,7 @@ import re
 
 
 class _OperationKey:
-    _or_operator_in_contains_part_regex = re.compile(r'contains\(.*\|.*\)')
+    _or_operator_in_contains_part_regex = re.compile(r'contains\((((?!\)).)*)\)')
 
     def __init__(self, xpath_1: str, xpath_2: str):
         self.xpath_1 = xpath_1
