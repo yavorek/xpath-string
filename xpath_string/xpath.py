@@ -13,3 +13,5 @@ class Xpath:
         else:
             raise TypeError('Only Xpath and string can be added to Xpath Object. Not {}'.format(type(other)))
 
+    def __str__(self):
+        return self.xpath
