@@ -36,15 +36,16 @@ class TwoXpathAddition(_OperationKey):
         return full_xpath
 
     def add_together_xpath_with_or_operator(self):
-        split_xpath_1 = self._split_xpath_1()
-        split_xpath_2 = self._split_xpath_2()
+        split_xpath_1 = copy.deepcopy(self._split_xpath_1())
+        split_xpath_2 = copy.deepcopy(self._split_xpath_2())
+        for contains_1 in self.xpath_1_contains_with_or_operator:
+            split_xpath_1 = re.sub('CLEARED_1', 'contains({})'.format(contains_1), ';!;'.join(split_xpath_1), 1).split(
+                ';!;')
+        for contains_2 in self.xpath_2_contains_with_or_operator:
+            split_xpath_2 = re.sub('CLEARED_2', 'contains({})'.format(contains_2), ';!;'.join(split_xpath_2), 1).split(
+                ';!;')
         split_xpath_product = [''.join(element) for element in itertools.product(split_xpath_1, split_xpath_2)]
-        joined_xpath = '|'.join(split_xpath_product)
-        full_xpath = copy.deepcopy(joined_xpath)
-        for contains in self.xpath_1_contains_with_or_operator:
-            full_xpath = re.sub('CLEARED_1', 'contains({})'.format(contains), full_xpath, 1)
-        for contains in self.xpath_2_contains_with_or_operator:
-            full_xpath = re.sub('CLEARED_2', 'contains({})'.format(contains), full_xpath, 1)
+        full_xpath = '|'.join(split_xpath_product)
         return full_xpath
 
     def _split_xpath_1(self):
