@@ -6,5 +6,11 @@ setup(
     description='Module which allows to make xpath operations over string which represent xpath',
     author='Tomasz Jaworski',
     author_email='jaworski.tomasz.91@gmail.com',
-    packages=find_packages()
+    packages=find_packages(),
+    url="https://github.com/yavorek/xpath_string",
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent"
+    ]
 )
