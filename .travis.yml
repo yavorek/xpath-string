@@ -17,6 +17,9 @@ deploy:
   user: yavorek
   password:
     secure: "VGyTrxSw0iSkwO3+RNBbntRdg2GQaNQKRN412ISq/jO+pnycfkk4mP55ODmFNFL88dm7WhnFtP4ZM+y3kZcU4fWGVbyw24JPJcobXyC39uixy90qDIfgycxg9PdEVYBfxDVlTsWDwhnfSU9xygkbgAVD2fL2pb7cktffl8qx/ZtZ/0ZWnW57wZj1KN4ccFwEVWjF55OuUnN0bhOawTIozQ2sJKpkMUpNPc0Mysz523SsuoJBfPlxsVu73hQn8/d9E4V7z3Ltg5EVCCbGvqr8UFJinYsmOCS5C9u9jL/YmoAgdNu+40U3emMCzSQOV4+Zm7900BU8imZqmZyITqK9oyndDeYRJc63bragoYfk4v0xVQBkDx+whVBPTLDG4cgATE0u7an1sYF39mEIafpO3jNqphMDlfP0uiBh18sY4ABUUKqH1uLGf9qTij7n02XwCH5l4Cui+b+l3aZZ/uJCMMpvKqeeq+BI9qu3W6MdYX2hkBtt2zpp9pgOUK4G1PvF7/zD2pYcOLKYvt04c4UiS4id6kTl5ZX0DUOBTWDx9yJuK7CSSowLapC46cI1OXEdwVpM83FUZlLo5Td443cXoZP3TVQ+iEjFP8HYYLQptYjbt2InFWdc2FBRllA7LALJHEL4tOTGkjGBHbNRpHpNwf07nEfUgdXMPixYGMqDet8="
+  on:
+    repo: yavorek/xpath-string
+    python: 3.6
 
 notifications:
   email:
