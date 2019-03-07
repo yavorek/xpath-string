@@ -11,6 +11,13 @@ install:
 
 script: tox
 
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: yavorek
+  password:
+    secure: "mvhFaS70H8BBKARsh74x4QBVtVlsHkk+a+CqWVg8ELndqf1a8nI/Kr74/XPMvsxSqc+UVHB29cCM7Affkv4Y6KjnwWqVh53TvEzDj6fmUPleHCVH7KEwHCIrcn0pLCRRFlQW7MOZ65CxE75KwaaCAlQ4OUHIUFrGmoHt4qYWxs0ghSjvY4o0gwCY3phrVqzNL9ASSNcpr8NGiV2MGC8Gfi0tVrTfMMRPVO0qa3pa1UIuHPmdkW98KjVBAQM/vUbbbE1xrb76HE7wA79PcNv+2msAj07vHNJW44z4okDHNjvSe6vHysqM7q5hAvBPORbJnx4GSkkI/hlRZ7P7FFW7YX2hekRlOev9JiqzTkptkMIJRKiVvuG0WRbWn7pnQ6mMqbRR28EZsKCzAcjWXmZqj/AmnQMWdhtLWAhGX3AvnBGOWSDoo9E2KuHJGGFKSOr5a9oyVyH3Aas97eYaZ4G5Gn6tEzSSKP2SR0dkLWT25MXDUDZZ2wju1vO+ykQxt8yPp0oPZQnLJg3O4tmWLvcnC4DRBarE8P9tZREuHxTjWqWNWp2cnXhRrIUtn5c3TgsIw+Uv2hWBFCyP57bRag/Il+JUXTE/SI7zklSFZfuQqlf9vxCzvKlG9wwBYRhAsmVlGEh4GwyWLfssKKhtw5WOyXd+j8B8vYHe2DqGKlTEqXQ="
+
 notifications:
   email:
     - jaworski.tomasz.91@gmail.com
