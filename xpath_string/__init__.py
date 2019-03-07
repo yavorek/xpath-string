@@ -3,4 +3,4 @@
 """Operations on xpath string."""
 
 __author__ = """Tomasz Jaworski"""
-__version__ = '0.1.0'
+__version__ = '0.1.1'
