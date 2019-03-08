@@ -20,6 +20,16 @@ class TestXpath(unittest.TestCase):
         assert str(self.object_1) == '//div', \
             '__str__ for Xpath is not working correctly. Received {} instead of {}'.format(str(self.object_1), '//div')
 
+    def test_format_return(self):
+        assert str(Xpath('//div[class="{}"]').format('ONE')) == '//div[class="ONE"]', \
+            'Xpath.format("ONE") returns {} instead of {}'.format(
+                Xpath('//div[class="{}"]').format('ONE'), '//div[class="ONE"]')
+
+    def test_format_return_type(self):
+        assert isinstance(Xpath('//div[class="{}"]').format('ONE'), Xpath), \
+            'Xpath.format() is not a Xpath class object. Is {} instead.'.format(type(Xpath('//div[class="{}"]').format(
+                'ONE')))
+
     def test_not_supported_type_add(self):
         try:
             self.object_1 + 123
