@@ -16,3 +16,7 @@ class Xpath(str):
 
     def __str__(self):
         return self.xpath
+
+    def format(self, *args, **kwargs):
+        self.xpath = super(Xpath, self).format(*args, **kwargs)
+        return self
