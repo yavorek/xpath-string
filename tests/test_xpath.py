@@ -28,8 +28,12 @@ class TestXpath(unittest.TestCase):
             assert True
 
     def test_string_add(self):
-        assert self.object_1 + 'Test', 'Addition of: "{}" and "Test" gives {} instead of {}'.format(
+        assert self.object_1 + 'Test' == '//divTest', 'Addition of: "{}" and "Test" gives {} instead of {}'.format(
             self.object_1, self.object_1 + 'Test', '//divTest')
+
+    def test_string_add_with_or_operator(self):
+        assert self.object_1 + '|/Test' == '//div|/Test', 'Addition of: "{}" and "Test" gives {} instead of {}'.format(
+            self.object_1, self.object_1 + 'Test', '//div|/Test')
 
     def test_simple_xpath_add(self):
         assert self.object_1 + self.object_2 == '//div//span', \
