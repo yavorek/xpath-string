@@ -15,6 +15,7 @@ param_list_add_two_xpath_without_contains = [
     ('|//div', '//avg|', '|//div|//avg|//div//avg'),
     ('//div|', '|//avg', '|//div|//avg|//div//avg'),
     ('//div|', '//avg|', '|//div|//avg|//div//avg'),
+    ('//div[@class|@type="mine"]', '//avg', '//div[@class|@type="mine"]//avg'),
     ('//div|//span[@class="abc"]//a|//a', '//avg[@name="ans"]|//avg/span/span', '//div//avg[@name="ans"]|//div//avg/span/span|//span[@class="abc"]//a//avg[@name="ans"]|//span[@class="abc"]//a//avg/span/span|//a//avg[@name="ans"]|//a//avg/span/span')
 ]
 
