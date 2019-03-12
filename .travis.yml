@@ -22,7 +22,6 @@ deploy:
     repo: yavorek/xpath-string
     python: 3.6
 
-
 notifications:
   email:
     - jaworski.tomasz.91@gmail.com
