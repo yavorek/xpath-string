@@ -28,5 +28,4 @@ class Xpath(str):
         return self.xpath != other.xpath
 
     def format(self, *args, **kwargs):
-        self.xpath = super(Xpath, self).format(*args, **kwargs)
-        return self
+        return super(Xpath, self).format(*args, **kwargs)
