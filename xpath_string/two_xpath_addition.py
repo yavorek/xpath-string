@@ -23,26 +23,26 @@ class TwoXpathAddition(_OperationKey):
         split_xpath_1 = self._split_xpath_1()
         joined_xpath = '|'.join([part_of_xpath + self.xpath_2 for part_of_xpath in split_xpath_1])
         full_xpath = copy.deepcopy(joined_xpath)
-        for contains in self.xpath_1_square_brackets_inside:
-            full_xpath = re.sub('CLEARED_1', '{}'.format(contains), full_xpath, 1)
+        for content in self.xpath_1_square_brackets_inside:
+            full_xpath = re.sub('CLEARED_1', '{}'.format(content), full_xpath, 1)
         return full_xpath
 
     def add_xpath_with_or_operator(self):
         split_xpath_2 = self._split_xpath_2()
         joined_xpath = '|'.join([self.xpath_1 + part_of_xpath for part_of_xpath in split_xpath_2])
         full_xpath = copy.deepcopy(joined_xpath)
-        for contains in self.xpath_2_square_brackets_inside:
-            full_xpath = re.sub('CLEARED_2', '{}'.format(contains), full_xpath, 1)
+        for content in self.xpath_2_square_brackets_inside:
+            full_xpath = re.sub('CLEARED_2', '{}'.format(content), full_xpath, 1)
         return full_xpath
 
     def add_together_xpath_with_or_operator(self):
         split_xpath_1 = copy.deepcopy(self._split_xpath_1())
         split_xpath_2 = copy.deepcopy(self._split_xpath_2())
-        for contains_1 in self.xpath_1_square_brackets_inside:
-            split_xpath_1 = re.sub('CLEARED_1', '{}'.format(contains_1), ';!;'.join(split_xpath_1), 1).split(
+        for content in self.xpath_1_square_brackets_inside:
+            split_xpath_1 = re.sub('CLEARED_1', '{}'.format(content), ';!;'.join(split_xpath_1), 1).split(
                 ';!;')
-        for contains_2 in self.xpath_2_square_brackets_inside:
-            split_xpath_2 = re.sub('CLEARED_2', '{}'.format(contains_2), ';!;'.join(split_xpath_2), 1).split(
+        for content in self.xpath_2_square_brackets_inside:
+            split_xpath_2 = re.sub('CLEARED_2', '{}'.format(content), ';!;'.join(split_xpath_2), 1).split(
                 ';!;')
         split_xpath_product = [''.join(element) for element in itertools.product(split_xpath_1, split_xpath_2)]
         full_xpath = '|'.join(split_xpath_product)
