@@ -7,6 +7,7 @@ class Xpath(str):
         self.xpath = xpath_string
 
     def __add__(self, other):
+        """ Override the default Addition behavior"""
         if isinstance(other, self.__class__):
             return TwoXpathAddition(self.xpath, other.xpath).add_two_xpath_together()
         elif isinstance(other, str):
@@ -15,6 +16,7 @@ class Xpath(str):
             raise TypeError('Only Xpath and string can be added to Xpath Object. Not {}'.format(type(other)))
 
     def __str__(self):
+        """ Override the default str() behavior"""
         return self.xpath
 
     def format(self, *args, **kwargs):
