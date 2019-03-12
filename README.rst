@@ -1,5 +1,11 @@
-[![Build Status](https://travis-ci.com/yavorek/xpath-string.svg?token=f1xCAxxKbQvFBcvCqY82&branch=master)](https://travis-ci.com/yavorek/xpath_string)
+.. image:: https://travis-ci.com/yavorek/xpath-string.svg?branch=master
+        :target: https://travis-ci.com/yavorek/xpath-string
 
+.. image:: https://img.shields.io/badge/python-3.4%2C%203.5%2C%203.6%2C%203.7-blue.svg
+        :target: https://pypi.python.org/pypi/xpath-string
+
+.. image:: https://img.shields.io/pypi/v/xpath-string.svg
+        :target: https://pypi.python.org/pypi/xpath-string
 
 xpath-string
 ============
