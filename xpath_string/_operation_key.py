@@ -23,9 +23,9 @@ class _OperationKey:
         return first_part + second_part
 
     def __or_operator_present_in_main_part_xpath_1(self):
-        xpath_without_contains_part = re.sub(self._or_operator_in_square_brackets_part_regex, '', self.xpath_1)
-        return True if '|' in xpath_without_contains_part else False
+        xpath_without_square_brackets_part = re.sub(self._or_operator_in_square_brackets_part_regex, '', self.xpath_1)
+        return True if '|' in xpath_without_square_brackets_part else False
 
     def __or_operator_present_in_main_part_xpath_2(self):
-        xpath_without_contains_part = re.sub(self._or_operator_in_square_brackets_part_regex, '', self.xpath_2)
-        return True if '|' in xpath_without_contains_part else False
+        xpath_without_square_brackets_part = re.sub(self._or_operator_in_square_brackets_part_regex, '', self.xpath_2)
+        return True if '|' in xpath_without_square_brackets_part else False
