@@ -30,6 +30,20 @@ class TestXpath(unittest.TestCase):
             'Xpath.format() is not a Xpath class object. Is {} instead.'.format(type(Xpath('//div[class="{}"]').format(
                 'ONE')))
 
+    def test_format_return_object(self):
+        assert Xpath('//div[class="{}"]').format('ONE') == Xpath('//div[class="ONE"]'), \
+            '"Xpath(\'//div[class="{}"]).format(\'ONE\')" is not the same object as: "Xpath(\'//div[class="ONE"]\')"'
+
+    def test_failure_format_object(self):
+        assert Xpath('//div[class="{}"]').format('ONE') != Xpath('//div[class="TWO"]'), \
+            '"Xpath(\'//div[class="{}"]).format(\'ONE\')" is the same object as: "Xpath(\'//div[class="TWO"]\')"'
+
+    def test_equal(self):
+        assert self.object_1 == Xpath('//div'), '"self.object_1 == Xpath(\'//div\')" is False'
+
+    def test_unequal(self):
+        assert self.object_1 != self.object_2, '"self.object_1 != self.object_2" is True'
+
     def test_not_supported_type_add(self):
         try:
             self.object_1 + 123
