@@ -26,6 +26,3 @@ class Xpath(str):
     def __ne__(self, other):
         """ Override the default Unequals behavior"""
         return self.xpath != other.xpath
-
-    def format(self, *args, **kwargs):
-        return super(Xpath, self).format(*args, **kwargs)
