@@ -49,3 +49,12 @@ class TestXpath(unittest.TestCase):
         assert self.object_1 + self.object_2 == '//div//span', \
             'Addition of: "{}" and "{}" gives {} instead of {}'.format(self.object_1, self.object_2,
                                                                        self.object_1 + self.object_2, '//div//span')
+
+    def test_xpath_with_square_brackets_add(self):
+        object_1 = Xpath("//div[@id='timezone']")
+        object_2 = Xpath("//span[@class='btn btn-default form-control ui-select-toggle']")
+        add_result = object_1 + object_2
+        assert add_result == "//div[@id='timezone']//span[@class='btn btn-default form-control ui-select-toggle']", \
+            "Addition result of {} and {} is {} instead of " \
+            "//div[@id='timezone']//span[@class='btn btn-default form-control ui-select-toggle']".format(
+                object_1, object_2, add_result)

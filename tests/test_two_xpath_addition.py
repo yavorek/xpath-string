@@ -15,6 +15,7 @@ param_list_add_two_xpath_without_contains = [
     ('|//div', '//avg|', '|//div|//avg|//div//avg'),
     ('//div|', '|//avg', '|//div|//avg|//div//avg'),
     ('//div|', '//avg|', '|//div|//avg|//div//avg'),
+    ('//div[@class|@type="mine"]', '//avg', '//div[@class|@type="mine"]//avg'),
     ('//div|//span[@class="abc"]//a|//a', '//avg[@name="ans"]|//avg/span/span', '//div//avg[@name="ans"]|//div//avg/span/span|//span[@class="abc"]//a//avg[@name="ans"]|//span[@class="abc"]//a//avg/span/span|//a//avg[@name="ans"]|//a//avg/span/span')
 ]
 
@@ -29,7 +30,7 @@ param_list_add_two_xpath_with_contains = [
     ('//a[contains(b|c|d)]', '//f|//avg/span', '//a[contains(b|c|d)]//f|//a[contains(b|c|d)]//avg/span'),
     ('//a', '//f[contains(b|c|d)]|//avg/span[contains(b|c|d)]', '//a//f[contains(b|c|d)]|//a//avg/span[contains(b|c|d)]'),
     ('//a[contains(b|c|d)]|//avg/span[contains(b|c|d)]', '//f', '//a[contains(b|c|d)]//f|//avg/span[contains(b|c|d)]//f'),
-    ('//a[contains(b|c|d)|//span/b[contains(blob|blob)]', '//a/f[contains(b|c)]|//b/f[contains(b|c)]', '//a[contains(b|c|d)//a/f[contains(b|c)]|//span/b[contains(blob|blob)]//a/f[contains(b|c)]|//a[contains(b|c|d)//b/f[contains(b|c)]|//span/b[contains(blob|blob)]//b/f[contains(b|c)]')
+    ('//a[contains(b|c|d)]|//span/b[contains(blob|blob)]', '//a/f[contains(b|c)]|//b/f[contains(b|c)]', '//a[contains(b|c|d)]//a/f[contains(b|c)]|//span/b[contains(blob|blob)]//a/f[contains(b|c)]|//a[contains(b|c|d)]//b/f[contains(b|c)]|//span/b[contains(blob|blob)]//b/f[contains(b|c)]')
 ]
 
 
