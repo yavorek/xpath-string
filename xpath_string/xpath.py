@@ -19,10 +19,6 @@ class Xpath(str):
         """ Override the default str() behavior"""
         return self.xpath
 
-    def __repr__(self):
-        """ Override the default repr() behavior"""
-        return self.xpath
-
     def __eq__(self, other):
         """ Override the default Equals behavior"""
         return self.xpath == other.xpath
