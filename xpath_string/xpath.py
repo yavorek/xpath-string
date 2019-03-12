@@ -19,6 +19,18 @@ class Xpath(str):
         """ Override the default str() behavior"""
         return self.xpath
 
+    def __repr__(self):
+        """ Override the default repr() behavior"""
+        return self.xpath
+
+    def __eq__(self, other):
+        """ Override the default Equals behavior"""
+        return self.xpath == other.xpath
+
+    def __ne__(self, other):
+        """ Override the default Unequals behavior"""
+        return self.xpath != other.xpath
+
     def format(self, *args, **kwargs):
         self.xpath = super(Xpath, self).format(*args, **kwargs)
         return self
