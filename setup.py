@@ -6,7 +6,7 @@ with open(path.join(this_directory, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    version='0.2.0',
+    version='0.2.1',
     name='xpath_string',
     description='Module which allows to make xpath operations over string which represent xpath',
     long_descritpion=long_description,
