@@ -1,5 +1,7 @@
 import unittest
 
+import pytest
+
 from xpath_string.xpath import Xpath
 
 
@@ -45,11 +47,8 @@ class TestXpath(unittest.TestCase):
         assert self.object_1 != self.object_2, '"self.object_1 != self.object_2" is True'
 
     def test_not_supported_type_add(self):
-        try:
+        with pytest.raises(TypeError):
             self.object_1 + 123
-            assert False, 'Not supported type was added to Xpath object'
-        except TypeError:
-            assert True
 
     def test_string_add(self):
         assert self.object_1 + 'Test' == '//divTest', 'Addition of: "{}" and "Test" gives {} instead of {}'.format(
