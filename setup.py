@@ -4,10 +4,10 @@ with open('README.rst') as readme_file:
     readme = readme_file.read()
 
 setup(
-    version='0.2.12',
+    version='0.2.13',
     name='xpath_string',
     description='Module which allows to make xpath operations over string which represent xpath',
-    long_descritpion=readme,
+    long_description=readme,
     author='Tomasz Jaworski',
     author_email='jaworski.tomasz.91@gmail.com',
     packages=find_packages(),
