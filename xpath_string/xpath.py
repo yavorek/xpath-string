@@ -36,5 +36,4 @@ class Xpath(str):
         :param kwargs:
         :return:
         """
-        self.xpath = self.xpath.format(*args, **kwargs)
-        return self
+        return Xpath(self.xpath.format(*args, **kwargs))
