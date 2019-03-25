@@ -10,6 +10,10 @@ class TwoXpathAddition(_OperationKey):
         super(TwoXpathAddition, self).__init__(xpath_1, xpath_2)
 
     def add_two_xpath_together(self):
+        """
+        Add two Xpath obj together
+        :return:
+        """
         if self.operation_key == '00':
             return self.xpath_1 + self.xpath_2
         elif self.operation_key == '10':
@@ -20,6 +24,10 @@ class TwoXpathAddition(_OperationKey):
             return self.add_together_xpath_with_or_operator()
 
     def add_to_xpath_with_or_operator(self):
+        """
+        Add to Xpath obj with .xpath attr containing OR operator another Xpath obj with .xpath attr without OR operator.
+        :return:
+        """
         split_xpath_1 = self._split_xpath_1()
         joined_xpath = '|'.join([part_of_xpath + self.xpath_2 for part_of_xpath in split_xpath_1])
         full_xpath = copy.deepcopy(joined_xpath)
@@ -28,6 +36,10 @@ class TwoXpathAddition(_OperationKey):
         return full_xpath
 
     def add_xpath_with_or_operator(self):
+        """
+        Add to Xpath obj without .xpath attr containing OR operator another Xpath with .xpath attr with OR operator.
+        :return:
+        """
         split_xpath_2 = self._split_xpath_2()
         joined_xpath = '|'.join([self.xpath_1 + part_of_xpath for part_of_xpath in split_xpath_2])
         full_xpath = copy.deepcopy(joined_xpath)
@@ -36,6 +48,10 @@ class TwoXpathAddition(_OperationKey):
         return full_xpath
 
     def add_together_xpath_with_or_operator(self):
+        """
+        Add together two Xpath objects with .xpath attr which contain OR operator.
+        :return:
+        """
         split_xpath_1 = copy.deepcopy(self._split_xpath_1())
         split_xpath_2 = copy.deepcopy(self._split_xpath_2())
         for content in self.xpath_1_square_brackets_inside:

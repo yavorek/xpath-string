@@ -30,5 +30,11 @@ class Xpath(str):
         return self.xpath != other.xpath
 
     def format(self, *args: Any, **kwargs: Any):
+        """
+        Returns Xpath obj with formatted version of it's .xpath attribute.
+        :param args:
+        :param kwargs:
+        :return:
+        """
         self.xpath = self.xpath.format(*args, **kwargs)
         return self
