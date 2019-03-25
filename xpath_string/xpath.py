@@ -1,3 +1,5 @@
+from typing import Any
+
 from xpath_string.two_xpath_addition import TwoXpathAddition
 
 
@@ -26,3 +28,7 @@ class Xpath(str):
     def __ne__(self, other):
         """ Override the default Unequals behavior"""
         return self.xpath != other.xpath
+
+    def format(self, *args: Any, **kwargs: Any):
+        self.xpath = self.xpath.format(*args, **kwargs)
+        return self

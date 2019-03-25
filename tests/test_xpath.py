@@ -28,17 +28,17 @@ class TestXpath(unittest.TestCase):
                 Xpath('//div[class="{}"]').format('ONE'), '//div[class="ONE"]')
 
     def test_format_return_type(self):
-        assert isinstance(Xpath('//div[class="{}"]').format('ONE'), str), \
-            'Xpath.format() is not a str class object. Is {} instead.'.format(type(Xpath('//div[class="{}"]').format(
+        assert isinstance(Xpath('//div[class="{}"]').format('ONE'), Xpath), \
+            'Xpath.format() is not a Xpath class object. Is {} instead.'.format(type(Xpath('//div[class="{}"]').format(
                 'ONE')))
 
     def test_format_return_object(self):
-        assert Xpath('//div[class="{}"]').format('ONE') == '//div[class="ONE"]', \
-            '"Xpath(\'//div[class="{}"]).format(\'ONE\')" is not the same object as: "//div[class="ONE"]"'
+        assert Xpath('//div[class="{}"]').format('ONE') == Xpath('//div[class="ONE"]'), \
+            '"Xpath(\'//div[class="{}"]).format(\'ONE\')" is not the same object as: "Xpath(\'//div[class="ONE"]\')"'
 
     def test_failure_format_object(self):
-        assert Xpath('//div[class="{}"]').format('ONE') != '//div[class="TWO"]', \
-            '"Xpath(\'//div[class="{}"]).format(\'ONE\')" is the same object as: "//div[class="TWO"]"'
+        assert Xpath('//div[class="{}"]').format('ONE') != Xpath('//div[class="TWO"]'), \
+            '"Xpath(\'//div[class="{}"]).format(\'ONE\')" is the same object as: Xpath(\'//div[class="TWO"]\')'
 
     def test_equal(self):
         assert self.object_1 == Xpath('//div'), '"self.object_1 == Xpath(\'//div\')" is False'
