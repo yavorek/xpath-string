@@ -7,6 +7,9 @@
 .. image:: https://img.shields.io/pypi/v/xpath-string.svg
         :target: https://pypi.python.org/pypi/xpath-string
 
+.. image:: https://codecov.io/gh/yavorek/xpath-string/branch/master/graph/badge.svg
+        :target: https://codecov.io/gh/yavorek/xpath-string
+
 xpath-string
 ============
 Simple module providing operations on Xpath string
