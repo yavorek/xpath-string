@@ -1,5 +1,3 @@
-from typing import Any
-
 from xpath_string.two_xpath_addition import TwoXpathAddition
 
 
@@ -29,7 +27,7 @@ class Xpath(str):
         """ Override the default Unequals behavior"""
         return self.xpath != other.xpath
 
-    def format(self, *args: Any, **kwargs: Any):
+    def format(self, *args, **kwargs):
         """
         Returns Xpath obj with formatted version of it's .xpath attribute.
         :param args:
