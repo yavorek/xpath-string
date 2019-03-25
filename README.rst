@@ -83,6 +83,26 @@ Xpath Adding
         # result_2.xpath == '//div[@class="name"]//some[@xpath="string"]|//div[@class="name"]//span'
 
 
+Xpath.format()
+--------------
+The string built-in is overwrote.
+*Xpath.format('some string')* is formatting *xpath* string attribute of a Object.
+It returns new Xpath object with 'formatted' *xpath* attribute.
+
+Example:
+
+.. code:: python
+
+    xpath_object_1 = Xpath('//some[@xpath="{}"]')
+    xpath_object_2 = xpath_object_1.format('new')
+    # xpath_object_1 == Xpath('//some[@xpath="{}"]')
+    # xpath_object_2 == Xpath('//some[@xpath="new"]')
+
+    xpath_object_3 = Xpath('//some[@xpath="{sth}"]')
+    xpath_object_4 = xpath_object_1.format(sth='one')
+    # xpath_object_3 == Xpath('//some[@xpath="{sth}"]')
+    # xpath_object_4 == Xpath('//some[@xpath="one"]')
+
 Running tests
 -------------
 Install tox (pip install tox)
