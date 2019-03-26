@@ -6,12 +6,14 @@ class Xpath(str):
         super(Xpath, self).__init__()
         self.xpath = xpath_string
 
-    def __add__(self, other):
+    def __add__(self, other) -> 'Xpath':
         """ Override the default Addition behavior"""
         if isinstance(other, self.__class__):
-            return TwoXpathAddition(self.xpath, other.xpath).add_two_xpath_together()
+            result = TwoXpathAddition(self.xpath, other.xpath).add_two_xpath_together()
+            return Xpath(result)
         elif isinstance(other, str):
-            return self.xpath + other
+            result = self.xpath + other
+            return Xpath(result)
         else:
             raise TypeError('Only Xpath and string can be added to Xpath Object. Not {}'.format(type(other)))
 
@@ -21,11 +23,21 @@ class Xpath(str):
 
     def __eq__(self, other):
         """ Override the default Equals behavior"""
-        return self.xpath == other.xpath
+        if isinstance(other, self.__class__):
+            return self.xpath == other.xpath
+        elif isinstance(other, str):
+            return self.xpath == other
+        else:
+            raise TypeError('Only Xpath object or string can be Equal to Xpath Object. Not {}'.format(type(other)))
 
     def __ne__(self, other):
         """ Override the default Unequals behavior"""
-        return self.xpath != other.xpath
+        if isinstance(other, self.__class__):
+            return self.xpath != other.xpath
+        elif isinstance(other, str):
+            return self.xpath != other
+        else:
+            raise TypeError('Only Xpath object or string can be Unequal to Xpath Object. Not {}'.format(type(other)))
 
     def format(self, *args, **kwargs):
         """

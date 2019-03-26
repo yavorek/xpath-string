@@ -107,7 +107,42 @@ class TestXpath(unittest.TestCase):
         object_1 = Xpath("//div[@id='timezone']")
         object_2 = Xpath("//span[@class='btn btn-default form-control ui-select-toggle']")
         add_result = object_1 + object_2
-        assert add_result == "//div[@id='timezone']//span[@class='btn btn-default form-control ui-select-toggle']", \
+        assert add_result.xpath == "//div[@id='timezone']//span[@class='btn btn-default form-control ui-select-toggle']", \
             "Addition result of {} and {} is {} instead of " \
             "//div[@id='timezone']//span[@class='btn btn-default form-control ui-select-toggle']".format(
                 object_1, object_2, add_result)
+
+    def test_string_add_result_type(self):
+        result = self.object_1 + 'Test'
+        assert isinstance(result, Xpath), \
+            'Addition of Xpath("{}") and "Test" is {} object instead of Xpath object'.format(self.object_1, result)
+
+    def test_xpath_add_result_type(self):
+        result = self.object_1 + self.object_2
+        assert isinstance(result, Xpath), \
+            'Addition of Xpath("{}") and Xpath("{}") is {} object instead of Xpath object'.format(
+                self.object_1, self.object_2, result)
+
+    def test_equal_two_xpath(self):
+        object_2 = Xpath('//div')
+        assert self.object_1 == object_2, 'Xpath("{}") is not equal to Xpath("{}")'.format(self.object_1, object_2)
+
+    def test_equal_xpath_and_string(self):
+        string_1 = '//div'
+        assert self.object_1 == string_1, 'Xpath("{}") is not equal to string: "{}"'.format(self.object_1, string_1)
+
+    def test_not_equal_two_xpath(self):
+        assert self.object_1 != self.object_2, 'Xpath("{}") is equal to Xpath("{}")'.format(
+            self.object_1, self.object_2)
+
+    def test_not_equal_xpath_and_string(self):
+        string_1 = '//span'
+        assert self.object_1 != string_1, 'Xpath("{}") is equal to string: "{}"'.format(self.object_1, string_1)
+
+    def test_equal_not_supported_type(self):
+        with pytest.raises(TypeError):
+            assert self.object_1 == 123
+
+    def test_not_equal_not_supported_type(self):
+        with pytest.raises(TypeError):
+            assert self.object_1 != 123
