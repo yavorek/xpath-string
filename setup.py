@@ -7,7 +7,7 @@ setup(
     version='0.2.3',
     name='xpath_string',
     description='Module which allows to make xpath operations over string which represent xpath',
-    long_description=readme,
+    long_description=readme.split('Running tests')[0],
     author='Tomasz Jaworski',
     author_email='jaworski.tomasz.91@gmail.com',
     packages=find_packages(),
