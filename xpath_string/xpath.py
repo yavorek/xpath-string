@@ -4,7 +4,7 @@ from xpath_string.two_xpath_addition import TwoXpathAddition
 class Xpath(str):
     def __init__(self, xpath_string: str):
         super(Xpath, self).__init__()
-        self.xpath = xpath_string
+        self.xpath = xpath_string.replace('"', '\'')
 
     def __add__(self, other) -> 'Xpath':
         """ Override the default Addition behavior"""
